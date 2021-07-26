@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Offers for student</title>
+</head>
+
+<body background="back4.jpg" style="background-repeat: no-repeat; background-size: cover;">
+    <center>
+        <div class="back">
+            <form>
+                <div class="box">
+                    <p>
+                        <div id="head">Get Up to 50% Educational Discount!</div>
+                    </p>
+                    <br>
+                    <p>
+                        <div class="info1">We offer great educational discounts on all our products (not combinable with other promotions). For already reduced products, the respective original price is used as a basis. </div>
+                    </p>
+                    <p>
+                        <div class="info1">Simply enter your data below and we will send you a discount code if you qualify for an educational discount.</div>
+                    </p>
+                    <p>
+                        <div id="fname"><input type="text" placeholder="First Name"></div>
+                    </p>
+                    <p>
+                        <div id="lname"><input type="text" placeholder="Last Name"> </div>
+                    </p>
+                    <p>
+                        <div class="email"><input type="text" placeholder="Name of Institute"></div>
+                    </p>
+                    <p>
+                        <div class="email"><input type="email" placeholder="Email provided by institute"></div>
+                    </p>
+                    <p>
+                        <div id="gen">
+                            Select gender
+                        </div>
+                        <div id="check">
+                            <br>
+                            <p><input type="radio" name="gender">Male</p>
+
+                            <p><input type="radio" name="gender">Female</p>
+
+                            <p><input type="radio" name="gender">Other</p>
+                        </div>
+                    </p>
+                    <p>
+                        <div id="birth">Select date of birth</div>
+                    </p>
+                    <p>
+                        <div id="birthyear"><input type="date"></div>
+                    </p>
+                    <p>
+                        <div id="year">Select year of study</div>
+                    </p>
+                    <p>
+                        <div id="yearofstudy" id="yearofstudy"><select name="yearofstudy">
+                        <option>1st Year</option>
+                        <option>2nd Year</option>
+                        <option>3rd Year</option>
+                        <option>4th Year</option>
+                    </select>
+                        </div>
+                    </p>
+                    <p>
+                        <div id="upload">Please upload ID card</div>
+                    </p>
+                    <p>
+                        <div id="uploaddoc"><input type="file"></div>
+                    </p>
+                    <p><button type="submit">Submit</button></p>
+
+                </div>
+            </form>
+        </div>
+    </center>
+</body>
+<style>
+    .box {
+        padding: 20px;
+        height: 750px;
+        width: 750px;
+        background-color: white;
+        opacity: 0.8;
+    }
+    
+    #head {
+        font-size: 40px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: #333;
+    }
+    
+    .info1 {
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    
+    .box input[type=text] {
+        padding: 8px;
+        height: 30px;
+        width: 270px;
+        border-color: black;
+        border-radius: 5px;
+    }
+    
+    #fname input[type=text] {
+        float: left;
+        margin-left: 65px;
+        margin-top: 10px;
+        font-size: 18px;
+    }
+    
+    #lname input[type=text] {
+        float: right;
+        margin-right: 65px;
+        margin-top: 10px;
+        font-size: 18px;
+    }
+    
+    .email input[type=email] {
+        font-size: 18px;
+        height: 30px;
+        width: 600px;
+        border-radius: 5px;
+        border-color: black;
+        margin-top: 10px;
+        padding: 8px;
+    }
+    
+    .email input[type=text] {
+        font-size: 18px;
+        height: 30px;
+        width: 600px;
+        border-radius: 5px;
+        border-color: black;
+        margin-top: 25px;
+        padding: 8px;
+    }
+    
+    #gen {
+        text-align: left;
+        margin-left: 65px;
+        font-size: 22px;
+        margin-top: 25px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    
+    #check {
+        margin-top: -20px;
+    }
+    
+    #check input[type=radio] {
+        margin-left: 65px;
+        margin-right: 10px;
+    }
+    
+    #check p {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        text-align: left;
+        font-size: 17px;
+    }
+    
+    #birth {
+        margin-top: -150px;
+        font-size: 22px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    
+    #year {
+        font-size: 22px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    
+    #yearofstudy select {
+        padding: 5px;
+        height: 30px;
+        width: 150px;
+    }
+    
+    #upload {
+        font-size: 22px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin-top: -170px;
+        float: right;
+        margin-right: 20px;
+    }
+    
+    #uploaddoc {
+        float: right;
+        margin-top: -130px;
+    }
+    
+    #uploaddoc input[type=file] {
+        margin-right: -20px;
+    }
+    
+    .box button {
+        height: 45px;
+        width: 150px;
+        font-size: 25px;
+        padding: 7px;
+        border-radius: 5px;
+        margin-top: 15px;
+        border: none;
+        background-color: rgb(196, 196, 196);
+    }
+    
+    .box button:hover {
+        color: black;
+        background-color: rgb(214, 214, 214);
+    }
+</style>
+
+</html>

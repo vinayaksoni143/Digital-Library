@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Checkout</title>
+</head>
+
+<body>
+    <div id="box">
+        <form onforminput="return validate()" action="mailto:sonivh@rknec.edu?subject=Userdata" method="POST" enctype="text/plain">
+            <div id="ship">Shipping Details</div>
+            <div id="data1">
+                <p>
+                    <div class="fname">Name : <input type="text" name="first name" placeholder="First Name" id="first" maxlength="15">
+                        <div class="fname"><input type="text" name="last name" placeholder="Last Name" id="last" maxlength="15"></div>
+                    </div>
+                </p>
+                <p>
+                    <div id="address">Address : <input type="text" name="address" placeholder="Address"></div>
+                </p>
+                <p>
+                    <div id="city">City : <input type="text" name="city" placeholder="City">
+                        <div id="state" name="state">State : <select>
+                            <option>Select State</option>
+                        <option>Andhra Pradesh</option>
+                        <option>Arunachal Pradesh</option>
+                        <option>Assam</option>
+                        <option>Bihar</option>
+                        <option>Chhattisgarh</option>
+                        <option>Delhi</option>
+                        <option>Goa</option>
+                        <option>Gujarat</option>
+                        <option>Haryana</option>
+                        <option>Himachal Pradesh</option>
+                        <option>Jammu and Kashmir</option>
+                        <option>Jharkhand</option>
+                        <option>Karnataka</option>
+                        <option>Kerala</option>
+                        <option>Madhya Pradesh</option>
+                        <option>Maharashtra</option>
+                        <option>Manipur</option>
+                        <option>Meghalaya</option>
+                        <option>Mizoram</option>
+                        <option>Nagaland</option>
+                        <option>Odisha</option>
+                        <option>Punjab</option>
+                        <option>Rajasthan</option>
+                        <option>Sikkim</option>
+                        <option>Tamil Nadu</option>
+                        <option>Telangana</option>
+                        <option>Tripura</option>
+                        <option>Uttar Pradesh</option>
+                        <option>Uttarakhand</option>
+                        <option>West Bengal</option>
+                    </select>
+                        </div>
+                    </div>
+                </p>
+                <p>
+                    <div id="pincode">Pincode : <input type="text" name="pincode" placeholder="Pincode" maxlength="6">
+                        <div id="contact">Contact Number : <input type="text" name="contact no." placeholder="Contact No." onclick="phoneno()" id="phone" maxlength="14"></div>
+                    </div>
+                </p>
+
+            </div>
+            <br>
+            <hr style="width: 100%; color:  #333;">
+            <div id="payment">Payment</div>
+            <div id="data2">
+                <br>
+                <p>
+                    <div class="modeofpay"><input type="radio" name="modeofpay">Credit/Debit Card</div>
+                </p>
+                <p>
+                    <div id="acceptedcards">Accepted Cards
+                        <img src="mastercard.png"><img src="maestro.png"><img src="visa.png"><img src="rupay.png"></div>
+                </p>
+
+                <p>
+                    <div id="cardname">Name on Card : <input type="text" placeholder="Name on card">
+                        <div id="cardno"> Card Number : <input type="text" placeholder="1111-2222-3333-4444"></div>
+                    </div>
+                </p>
+                <p>
+                    <div id="expmonth">Expiry Month : <select>
+                    
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option></select>
+                        <div id="expyear">Expiry Year : <select>
+                    <option>2020</option>
+                    <option>2021</option>
+                    <option>2022</option>
+                    <option>2023</option>
+                    <option>2024</option>
+                    <option>2025</option>
+                    <option>2026</option>
+                    <option>2027</option>
+                    <option>2028</option>
+                    <option>2029</option>
+                    <option>2030</option>
+                </select>
+                            <div id="cvv">CVV : <input type="text" placeholder="123" maxlength="3"></div>
+                        </div>
+                    </div>
+                </p>
+                <br>
+                <p>
+                    <div class="modeofpay"><input type="radio" name="modeofpay">Cash on Delivery(COD)</div>
+                </p>
+                <p>
+                    <div id="cod">Paying with COD will add &#8377;50 to your total billing amount.</div>
+                </p>
+                <br>
+                <button type="submit">Continue</button>
+            </div>
+
+
+        </form>
+
+    </div>
+</body>
+<script>
+    function phoneno() {
+        var c = document.getElementById("phone").value;
+        var b = '+91 ';
+        document.getElementById("phone").value = b + c;
+    }
+
+    function validate() {
+        var a = document.getElementById("First");
+        var b = document.getElementById("Last");
+        var c = document.getElementById("phone");
+
+        var patt_first = /(^[A-Z][a-z]+)/;
+        var patt_last = /(^[A-Z][a-z]+)/;
+        var patt_phone = /(^[0-9]+)/;
+        if (a.value == "") {
+            alert("First name is not entered");
+            return false;
+        } else {
+            if (patt_first.test(a.value)) {
+                if (b.value == "") {
+                    alert("Last name is not entered");
+                    return false;
+                } else {
+                    if (patt_last.test(b.value)) {
+                        if (c.value == "") {
+                            alert("Contact number is not entered");
+                            return false;
+                        } else {
+                            if (patt_phone.test(c.value)) {
+                                alert("Data is submitted");
+                                return true;
+                            } else {
+                                alert("Contact number is not in format (Please enter only numbers)");
+                                return false;
+                            }
+                        }
+                    } else {
+                        alert("Last Name is not in format (Please enter first letter capital)");
+                        return false;
+                    }
+                }
+            } else {
+                alert("First Name is not in format (Please enter first letter capital)");
+                return false;
+            }
+        }
+    }
+</script>
+<style>
+    #box {
+        height: 850px;
+        width: 800px;
+        padding: 30px;
+        margin-top: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #fff0e3;
+    }
+    
+    #data1 {
+        margin-top: 40px;
+    }
+    
+    #data1 input:hover {
+        border-color: #555;
+    }
+    
+    #ship {
+        font-size: 30px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    
+    .fname {
+        display: inline;
+        margin-top: 20px;
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    
+    .fname input[type=text] {
+        margin-left: 40px;
+        padding: 10px;
+        width: 300px;
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    
+    #address {
+        margin-top: 20px;
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    
+    #address input[type=text] {
+        margin-left: 22px;
+        padding: 10px;
+        width: 670px;
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    
+    #city {
+        margin-top: 20px;
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    
+    #city input[type=text] {
+        margin-left: 55px;
+        padding: 10px;
+        width: 250px;
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    
+    #state {
+        float: right;
+    }
+    
+    #state select {
+        margin-left: 20px;
+        padding: 10px;
+        width: 300px;
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    
+    #pincode {
+        margin-top: 20px;
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    
+    #pincode input[type=text] {
+        margin-left: 25px;
+        padding: 10px;
+        width: 150px;
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    
+    #contact {
+        float: right;
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    
+    #contact input[type=text] {
+        margin-left: 20px;
+        padding: 10px;
+        width: 275px;
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    
+    #contact::before {
+        content: counter(+91);
+        padding: 10px;
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    
+    #payment {
+        margin-top: 20px;
+        font-size: 30px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    
+    #cardname {
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    
+    #cardname input[type=text] {
+        padding: 5px;
+        margin-top: 10px;
+        font-size: 15px;
+        width: 200px;
+        margin-left: 15px;
+    }
+    
+    #acceptedcards {
+        margin-top: 30px;
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    
+    #acceptedcards img {
+        height: 20px;
+        width: 40px;
+        padding-left: 20px;
+    }
+    
+    #cardno {
+        float: right;
+        margin-right: 50px;
+    }
+    
+    #expmonth {
+        margin-top: 30px;
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    
+    #expmonth select {
+        margin-left: 10px;
+        margin-top: 10px;
+        padding: 5px;
+        font-size: 15px;
+        width: 80px;
+    }
+    
+    #expyear {
+        float: right;
+        margin-right: 100px;
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    
+    #expyear select {
+        padding: 5px;
+        font-size: 15px;
+        width: 120px;
+    }
+    
+    #cvv {
+        float: right;
+        margin-left: 40px;
+    }
+    
+    #cvv input[type=text] {
+        padding: 5px;
+        font-size: 15px;
+        width: 100px;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+    
+    .modeofpay {
+        font-size: 23px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    
+    #cod {
+        font-size: 18px;
+        color: #333;
+        margin-left: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    
+    #data2 button {
+        padding: 10px 20px;
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin-left: 350px;
+        border: none;
+        background-color: rgb(255, 184, 125);
+        border-radius: 20px;
+    }
+    
+    #data2 button:hover {
+        background-color: rgb(253, 206, 168);
+    }
+</style>
+
+</html>

@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Orders</title>
+</head>
+
+<body>
+
+    <div id="box1">
+        <p>
+            <h1>My Cart</h1>
+
+        </p>
+        <hr style="width: 1000px; margin-right: auto; margin-left: auto; color: #555;">
+        <form onsubmit="return validate()" action="mailto:sonivh@rknec.edu?subject=Userdata" method="POST" enctype="text/plain">
+            <div id="bookidhead"> Book id
+                <br><input type="text" id="bookid1" name="Book id 1" oninput="data1()" onchange="total()">
+                <br><input type="text" id="bookid2" name="Book id 2" oninput="data2()" onchange="total()">
+                <br><input type="text" id="bookid3" name="Book id 3" oninput="data3()" onchange="total()">
+                <br><input type="text" id="bookid4" name="Book id 4" oninput="data4()" onchange="total()">
+                <br><input type="text" id="bookid5" name="Book id 5" oninput="data5()" onchange="total()">
+            </div>
+            <div id="booknamehead"> Book Name
+                <br><input type="text" id="bookname1" name="Book Name" oninput="data1()" disabled>
+                <br><input type="text" id="bookname2" name="Book Name" oninput="data2()" disabled>
+                <br><input type="text" id="bookname3" name="Book Name" oninput="data3()" disabled>
+                <br><input type="text" id="bookname4" name="Book Name" oninput="data4()" disabled>
+                <br><input type="text" id="bookname5" name="Book Name" oninput="data5()" disabled>
+            </div>
+            <div id="pricehead"> Price
+                <br><input type="text" id="price1" name="Price" oninput="data1()" disabled>
+                <br><input type="text" id="price2" name="Price" oninput="data2()" disabled>
+                <br><input type="text" id="price3" name="Price" oninput="data3()" disabled>
+                <br><input type="text" id="price4" name="Price" oninput="data4()" disabled>
+                <br><input type="text" id="price5" name="Price" oninput="data5()" disabled>
+            </div>
+            <div id="coupon">Enter coupon code &nbsp;&nbsp;<input type="text" id="couponcode"> <button type="button" onclick="coupon('1')">Use</button></div>
+            <div id="discount">Discount : &nbsp;&nbsp;<input type="text" id="discountminus" onchange="lmao()" disabled></div>
+            <div id="total">Total : &nbsp;&nbsp;<input type="text" id="netpay" disabled></div>
+
+            <div id="checkout"><a href="checkout.html"><button type="button">Checkout</button></a></div>
+            <div id="submitdata"><button type="submit">Submit</button></div>
+        </form>
+    </div>
+
+    <div id="box2">
+        <div id="calculator">
+            <table cellspacing="10px">
+                <tr>
+
+                    <td colspan="4"><input type="text" id="box" placeholder="0" disabled/></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div id="button3"><input type="button" value="C" onclick="clr()" /></div>
+                    </td>
+                    <td>
+                        <div id="button3"><input type="button" value="&#8730;" onclick="root()" /></div>
+                    </td>
+                    <td>
+                        <div id="button3"><input type="button" value="%" onclick="data('%')" /></div>
+                    </td>
+                    <td>
+                        <div id="button2"><input type="button" value="/" onclick="data('/')" /></div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div id="button1"><input type="button" value="7" onclick="data('7')" /></div>
+                    </td>
+                    <td>
+                        <div id="button1"><input type="button" value="8" onclick="data('8')" /></div>
+                    </td>
+                    <td>
+                        <div id="button1"><input type="button" value="9" onclick="data('9')" /></div>
+                    </td>
+                    <td>
+                        <div id="button2"><input type="button" value="x" onclick="data('*')" /></div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div id="button1"><input type="button" value="4" onclick="data('4')" /></div>
+                    </td>
+                    <td>
+                        <div id="button1"><input type="button" value="5" onclick="data('5')" /></div>
+                    </td>
+                    <td>
+                        <div id="button1"><input type="button" value="6" onclick="data('6')" /></div>
+                    </td>
+                    <td>
+                        <div id="button2"><input type="button" value="-" onclick="data('-')" /></div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div id="button1"><input type="button" value="1" onclick="data('1')" /></div>
+                    </td>
+                    <td>
+                        <div id="button1"><input type="button" value="2" onclick="data('2')" /></div>
+                    </td>
+                    <td>
+                        <div id="button1"><input type="button" value="3" onclick="data('3')" /></div>
+                    </td>
+                    <td>
+                        <div id="button2"><input type="button" value="+" onclick="data('+')"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="button1"><input type="button" value="." onclick="data('.')" /></div>
+                    </td>
+                    <td>
+                        <div id="button1"><input type="button" value="0" onclick="data('0')" /></div>
+                    </td>
+                    <td>
+                        <div id="button1"><input type="button" value="&#960;" onclick="data('3.14')" /></div>
+                    </td>
+                    <td>
+                        <div id="button2"><input type="button" value="=" onclick="calculate()" /></div>
+                    </td>
+
+                </tr>
+
+            </table>
+        </div>
+
+
+        <div id="currency">
+            <h1>Currency Converter</h1>
+            <div id="curr1"><button type="button" disabled>&#8377;</button><input type="text" id="rupee" onchange="Currencyconvert()"></div>
+            <div id="curr1"><button type="button" disabled>&#36;</button><input type="text" id="dollar"></div>
+            <div id="curr1"><button type="button" disabled>&#163;</button><input type="text" id="pound"></div>
+            <div id="curr1"><button type="button" disabled>&#8364;</button><input type="text" id="euro"></div>
+            <div id="curr1"><button type="button" disabled>&#165;</button><input type="text" id="yen"></div>
+            <div id="curr1"><button type="button" disabled>&#8355;</button><input type="text" id="franc"></div>
+
+        </div>
+
+    </div>
+</body>
+<style>
+    #box1 {
+        height: 750px;
+        width: 1000px;
+        padding: 10px 30px;
+        margin-top: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #fff0e3;
+    }
+    
+    #box1 h1 {
+        font-size: 40px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    #bookidhead {
+        float: left;
+        text-align: center;
+        padding-left: 50px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 25px;
+        margin-top: 20px;
+        text-decoration: underline;
+    }
+    
+    #bookidhead input[type=text] {
+        padding: 5px;
+        height: 30px;
+        width: 100px;
+        margin-top: 15px;
+        font-size: 17px;
+        border: #555 solid;
+        border-width: 1px;
+        border-radius: 5px;
+        text-align: center;
+    }
+    
+    #booknamehead {
+        float: left;
+        text-align: center;
+        padding-left: 120px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 25px;
+        margin-top: 20px;
+        text-decoration: underline;
+    }
+    
+    #booknamehead input[type=text] {
+        padding: 5px;
+        height: 30px;
+        width: 300px;
+        margin-top: 15px;
+        font-size: 25px;
+        text-align: center;
+        border-color: #555;
+        border: none;
+        border-width: 1px;
+        background-color: #fff0e3;
+    }
+    
+    #pricehead {
+        float: left;
+        text-align: center;
+        padding-left: 120px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 25px;
+        margin-top: 20px;
+        text-decoration: underline;
+    }
+    
+    #pricehead input[type=text] {
+        padding: 5px;
+        height: 30px;
+        width: 200px;
+        margin-top: 15px;
+        font-size: 25px;
+        text-align: center;
+        border-color: #555;
+        border: none;
+        border-width: 1px;
+        background-color: #fff0e3;
+    }
+    
+    #coupon {
+        float: left;
+        padding-left: 550px;
+        margin-top: 40px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 20px;
+    }
+    
+    #coupon input[type=text] {
+        padding: 5px;
+        height: 20px;
+        width: 150px;
+        font-size: 17px;
+        background-color: #fff6ee;
+        border-color: black;
+        border: solid 2px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+    
+    #coupon button {
+        padding: 6px;
+        height: 34px;
+        font-size: 17px;
+        background-color: rgb(255, 184, 125);
+        margin-left: -8px;
+        border: solid 2px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    
+    #coupon button:hover {
+        background-color: rgb(253, 206, 168);
+    }
+    
+    #discount {
+        float: left;
+        padding-left: 624px;
+        margin-top: 25px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 20px;
+    }
+    
+    #discount input[type=text] {
+        padding: 5px;
+        height: 20px;
+        width: 150px;
+        font-size: 20px;
+        background-color: #fff0e3;
+        border: none;
+        text-align: center;
+        color: #333;
+    }
+    
+    #total {
+        float: left;
+        padding-left: 610px;
+        margin-top: 25px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 40px;
+    }
+    
+    #total input[type=text] {
+        height: 25px;
+        padding: 5px;
+        width: 150px;
+        font-size: 40px;
+        background-color: #fff0e3;
+        border-color: black;
+        text-align: center;
+        color: black;
+        border: none;
+        margin-left: -15px;
+    }
+    
+    #checkout {
+        margin-top: 105px;
+        float: left;
+        margin-left: -280px;
+    }
+    
+    #checkout button {
+        padding: 10px 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 25px;
+        background-color: rgb(255, 184, 125);
+        border: none;
+        border-radius: 100px;
+    }
+    
+    #checkout button:hover {
+        background-color: rgb(253, 206, 168);
+    }
+    
+    #submitdata {
+        margin-top: 105px;
+        float: left;
+        margin-left: -600px;
+    }
+    
+    #submitdata button {
+        padding: 10px 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 25px;
+        background-color: rgb(255, 184, 125);
+        border: none;
+        border-radius: 100px;
+    }
+    
+    #submitdata button:hover {
+        background-color: rgb(253, 206, 168);
+    }
+    
+    #box2 {
+        height: 500px;
+        width: 1000px;
+        padding: 10px 30px;
+        margin-top: 70px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #fff0e3;
+    }
+    
+    #button1 input[type="button"] {
+        height: 50px;
+        width: 50px;
+        border: none;
+        font-size: 25px;
+        padding: 10px;
+        border-radius: 30px;
+        background-color: rgb(51, 51, 51);
+        color: white;
+    }
+    
+    #button1 input[type="button"]:hover {
+        background-color: #707070;
+    }
+    
+    #button2 input[type="button"] {
+        height: 50px;
+        width: 50px;
+        border: none;
+        font-size: 25px;
+        padding: 10px;
+        border-radius: 30px;
+        color: white;
+        background-color: rgb(242, 163, 60);
+    }
+    
+    #button2 input[type="button"]:hover {
+        background-color: #fdc27d;
+    }
+    
+    #button3 input[type="button"] {
+        height: 50px;
+        width: 50px;
+        border: none;
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 30px;
+        background-color: rgb(165, 165, 165);
+    }
+    
+    #button3 input[type="button"]:hover {
+        background-color: #919191;
+    }
+    
+    #calculator input[type="text"] {
+        width: 240px;
+        background-color: black;
+        margin-right: -11px;
+        color: white;
+        height: 90px;
+        font-size: 40px;
+        padding: 10px;
+        text-align: right;
+        border: none;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    
+    #calculator {
+        float: right;
+        margin-right: 140px;
+        border: black solid;
+        border-radius: 15px;
+        margin-top: 30px;
+        background-color: black;
+    }
+    
+    #calculator h1 {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 30px;
+        text-align: center;
+        font-weight: normal;
+    }
+    
+    #currency {
+        float: left;
+        margin-left: 140px;
+    }
+    
+    #currency h1 {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 30px;
+        text-align: center;
+        font-weight: normal;
+        margin-bottom: -5px;
+    }
+    
+    #currency button {
+        padding: 7px 15px;
+        font-size: 30px;
+        margin-top: 20px;
+        border-radius: 35px;
+        border: none;
+        color: white;
+        background-color: rgb(242, 163, 60);
+        margin-right: 20px;
+    }
+    
+    #currency input[type=text] {
+        font-size: 25px;
+        padding: 10px 20px;
+        text-align: center;
+        border-radius: 25px;
+        border: none;
+        width: 150px;
+        color: black;
+        background-color: rgb(165, 165, 165);
+    }
+    
+    #calculator1 {
+        border-color: black;
+    }
+</style>
+<script>
+    function Currencyconvert() {
+        var r = document.getElementById("rupee").value;
+        var d = document.getElementById("dollar").value;
+        var p = document.getElementById("pound").value;
+        var e = document.getElementById("euro").value;
+        var y = document.getElementById("yen").value;
+        var f = document.getElementById("franc").value;
+
+        var df = r * 0.013;
+        var pf = r * 0.0098;
+        var ef = r * 0.011;
+        var yf = r * 1.47;
+        var ff = r * 0.012;
+
+        document.getElementById("rupee").value = r;
+        document.getElementById("dollar").value = df.toFixed(2);
+        document.getElementById("pound").value = pf.toFixed(2);
+        document.getElementById("euro").value = ef.toFixed(2);
+        document.getElementById("yen").value = yf.toFixed(2);
+        document.getElementById("franc").value = ff.toFixed(2);
+    }
+
+    function clr() {
+        document.getElementById("box").value = "";
+    }
+
+    function root() {
+        var x = document.getElementById("box").value;
+        var y = Math.sqrt(x);
+        document.getElementById("box").value = y;
+    }
+
+    function data(val) {
+        document.getElementById("box").value += val;
+    }
+
+    function calculate() {
+        var x = document.getElementById("box").value;
+        document.getElementById("box").value = eval(x);
+    }
+
+    function data1(x) {
+        var id = document.getElementById("bookid1").value;
+
+        if (id == 'n1') {
+            document.getElementById("bookname1").value = 'The Night Always Comes';
+            document.getElementById("price1").value = 1625;
+        }
+        if (id == 'n2') {
+            document.getElementById("bookname1").value = 'Gold Diggers';
+            document.getElementById("price1").value = 1999;
+        }
+        if (id == 'n3') {
+            document.getElementById("bookname1").value = 'Call It Horses';
+            document.getElementById("price1").value = 1099;
+        }
+        if (id == 'n4') {
+            document.getElementById("bookname1").value = 'The Bone Fire';
+            document.getElementById("price1").value = 1200;
+        }
+        if (id == 'n5') {
+            document.getElementById("bookname1").value = 'The Lowering Days';
+            document.getElementById("price1").value = 1710;
+        }
+        if (id == 'n6') {
+            document.getElementById("bookname1").value = 'Acts Of Desperation';
+            document.getElementById("price1").value = 1350;
+        }
+
+
+        if (id == 's1') {
+            document.getElementById("bookname1").value = 'First Kid,Second Kid';
+            document.getElementById("price1").value = 999;
+        }
+        if (id == 's2') {
+            document.getElementById("bookname1").value = 'Al-Nar-Street';
+            document.getElementById("price1").value = 840;
+        }
+        if (id == 's3') {
+            document.getElementById("bookname1").value = 'Responsible Adults';
+            document.getElementById("price1").value = 499;
+        }
+        if (id == 's4') {
+            document.getElementById("bookname1").value = 'Taking The Blacksmith';
+            document.getElementById("price1").value = 799;
+        }
+        if (id == 's5') {
+            document.getElementById("bookname1").value = 'Bee On A String ';
+            document.getElementById("price1").value = 849;
+        }
+        if (id == 's6') {
+            document.getElementById("bookname1").value = 'Boys On A Veranda';
+            document.getElementById("price1").value = 629;
+        }
+
+
+        if (id == 'b1') {
+            document.getElementById("bookname1").value = 'The Story Of My Life';
+            document.getElementById("price1").value = 129;
+        }
+        if (id == 'b2') {
+            document.getElementById("bookname1").value = 'The Three Musketeers';
+            document.getElementById("price1").value = 250;
+        }
+        if (id == 'b3') {
+            document.getElementById("bookname1").value = 'A Memorial Discourse';
+            document.getElementById("price1").value = 1600;
+        }
+        if (id == 'b4') {
+            document.getElementById("bookname1").value = 'Cleopatra';
+            document.getElementById("price1").value = 1350;
+        }
+        if (id == 'b5') {
+            document.getElementById("bookname1").value = 'Steve Jobs';
+            document.getElementById("price1").value = 469;
+        }
+        if (id == 'b6') {
+            document.getElementById("bookname1").value = 'Leonardo da Vinci';
+            document.getElementById("price1").value = 1969;
+        }
+
+
+        if (id == 'm1') {
+            document.getElementById("bookname1").value = 'The Girl on the Train';
+            document.getElementById("price1").value = 248;
+        }
+        if (id == 'm2') {
+            document.getElementById("bookname1").value = 'And Then There Were None';
+            document.getElementById("price1").value = 599;
+        }
+        if (id == 'm3') {
+            document.getElementById("bookname1").value = 'Dark Places';
+            document.getElementById("price1").value = 350;
+        }
+        if (id == 'm4') {
+            document.getElementById("bookname1").value = 'Gone Girl';
+            document.getElementById("price1").value = 995;
+        }
+        if (id == 'm5') {
+            document.getElementById("bookname1").value = 'In the Woods';
+            document.getElementById("price1").value = 1270;
+        }
+        if (id == 'm6') {
+            document.getElementById("bookname1").value = 'The Turn of the Key';
+            document.getElementById("price1").value = 2110;
+        }
+
+
+        if (id == 'r1') {
+            document.getElementById("bookname1").value = 'Everything After';
+            document.getElementById("price1").value = 950;
+        }
+        if (id == 'r2') {
+            document.getElementById("bookname1").value = 'Act Your Age, Eve Brown';
+            document.getElementById("price1").value = 940;
+        }
+        if (id == 'r3') {
+            document.getElementById("bookname1").value = 'Wild Women and the Blues';
+            document.getElementById("price1").value = 699;
+        }
+        if (id == 'r4') {
+            document.getElementById("bookname1").value = 'Bone Criers Dawn';
+            document.getElementById("price1").value = 660;
+        }
+        if (id == 'r5') {
+            document.getElementById("bookname1").value = 'The Dating Plan';
+            document.getElementById("price1").value = 1180;
+        }
+        if (id == 'r6') {
+            document.getElementById("bookname1").value = 'Down Comes the Night';
+            document.getElementById("price1").value = 969;
+        }
+
+
+        if (id == 'c1') {
+            document.getElementById("bookname1").value = 'Batman: Year One';
+            document.getElementById("price1").value = 699;
+        }
+        if (id == 'c2') {
+            document.getElementById("bookname1").value = 'Oblivion Song, Vol. 5';
+            document.getElementById("price1").value = 1390;
+        }
+        if (id == 'c3') {
+            document.getElementById("bookname1").value = 'Hawkeye, Volume 1';
+            document.getElementById("price1").value = 789;
+        }
+        if (id == 'c4') {
+            document.getElementById("bookname1").value = 'Superman: Red Son';
+            document.getElementById("price1").value = 1190;
+        }
+        if (id == 'c5') {
+            document.getElementById("bookname1").value = 'Civil War';
+            document.getElementById("price1").value = 549;
+        }
+        if (id == 'c6') {
+            document.getElementById("bookname1").value = 'The Leak';
+            document.getElementById("price1").value = 1350;
+        }
+    }
+
+
+
+
+
+
+    function data2(x) {
+        var id = document.getElementById("bookid2").value;
+
+        if (id == 'n1') {
+            document.getElementById("bookname2").value = 'The Night Always Comes';
+            document.getElementById("price2").value = 1625;
+        }
+        if (id == 'n2') {
+            document.getElementById("bookname2").value = 'Gold Diggers';
+            document.getElementById("price2").value = 1999;
+        }
+        if (id == 'n3') {
+            document.getElementById("bookname2").value = 'Call It Horses';
+            document.getElementById("price2").value = 1099;
+        }
+        if (id == 'n4') {
+            document.getElementById("bookname2").value = 'The Bone Fire';
+            document.getElementById("price2").value = 1200;
+        }
+        if (id == 'n5') {
+            document.getElementById("bookname2").value = 'The Lowering Days';
+            document.getElementById("price2").value = 1710;
+        }
+        if (id == 'n6') {
+            document.getElementById("bookname2").value = 'Acts Of Desperation';
+            document.getElementById("price2").value = 1350;
+        }
+
+
+        if (id == 's1') {
+            document.getElementById("bookname2").value = 'First Kid,Second Kid';
+            document.getElementById("price2").value = 999;
+        }
+        if (id == 's2') {
+            document.getElementById("bookname2").value = 'Al-Nar-Street';
+            document.getElementById("price2").value = 840;
+        }
+        if (id == 's3') {
+            document.getElementById("bookname2").value = 'Responsible Adults';
+            document.getElementById("price2").value = 499;
+        }
+        if (id == 's4') {
+            document.getElementById("bookname2").value = 'Taking The Blacksmith';
+            document.getElementById("price2").value = 799;
+        }
+        if (id == 's5') {
+            document.getElementById("bookname2").value = 'Bee On A String ';
+            document.getElementById("price2").value = 849;
+        }
+        if (id == 's6') {
+            document.getElementById("bookname2").value = 'Boys On A Veranda';
+            document.getElementById("price2").value = 629;
+        }
+
+
+        if (id == 'b1') {
+            document.getElementById("bookname2").value = 'The Story Of My Life';
+            document.getElementById("price2").value = 129;
+        }
+        if (id == 'b2') {
+            document.getElementById("bookname2").value = 'The Three Musketeers';
+            document.getElementById("price2").value = 250;
+        }
+        if (id == 'b3') {
+            document.getElementById("bookname2").value = 'A Memorial Discourse';
+            document.getElementById("price2").value = 1600;
+        }
+        if (id == 'b4') {
+            document.getElementById("bookname2").value = 'Cleopatra';
+            document.getElementById("price2").value = 1350;
+        }
+        if (id == 'b5') {
+            document.getElementById("bookname2").value = 'Steve Jobs';
+            document.getElementById("price2").value = 469;
+        }
+        if (id == 'b6') {
+            document.getElementById("bookname2").value = 'Leonardo da Vinci';
+            document.getElementById("price2").value = 1969;
+        }
+
+
+        if (id == 'm1') {
+            document.getElementById("bookname2").value = 'The Girl on the Train';
+            document.getElementById("price2").value = 248;
+        }
+        if (id == 'm2') {
+            document.getElementById("bookname2").value = 'And Then There Were None';
+            document.getElementById("price2").value = 599;
+        }
+        if (id == 'm3') {
+            document.getElementById("bookname2").value = 'Dark Places';
+            document.getElementById("price2").value = 350;
+        }
+        if (id == 'm4') {
+            document.getElementById("bookname2").value = 'Gone Girl';
+            document.getElementById("price2").value = 995;
+        }
+        if (id == 'm5') {
+            document.getElementById("bookname2").value = 'In the Woods';
+            document.getElementById("price2").value = 1270;
+        }
+        if (id == 'm6') {
+            document.getElementById("bookname2").value = 'The Turn of the Key';
+            document.getElementById("price2").value = 2110;
+        }
+
+
+        if (id == 'r1') {
+            document.getElementById("bookname2").value = 'Everything After';
+            document.getElementById("price2").value = 950;
+        }
+        if (id == 'r2') {
+            document.getElementById("bookname2").value = 'Act Your Age, Eve Brown';
+            document.getElementById("price2").value = 940;
+        }
+        if (id == 'r3') {
+            document.getElementById("bookname2").value = 'Wild Women and the Blues';
+            document.getElementById("price2").value = 699;
+        }
+        if (id == 'r4') {
+            document.getElementById("bookname2").value = 'Bone Criers Dawn';
+            document.getElementById("price2").value = 660;
+        }
+        if (id == 'r5') {
+            document.getElementById("bookname2").value = 'The Dating Plan';
+            document.getElementById("price2").value = 1180;
+        }
+        if (id == 'r6') {
+            document.getElementById("bookname2").value = 'Down Comes the Night';
+            document.getElementById("price2").value = 969;
+        }
+
+
+        if (id == 'c1') {
+            document.getElementById("bookname2").value = 'Batman: Year One';
+            document.getElementById("price2").value = 699;
+        }
+        if (id == 'c2') {
+            document.getElementById("bookname2").value = 'Oblivion Song, Vol. 5';
+            document.getElementById("price2").value = 1390;
+        }
+        if (id == 'c3') {
+            document.getElementById("bookname2").value = 'Hawkeye, Volume 1';
+            document.getElementById("price2").value = 789;
+        }
+        if (id == 'c4') {
+            document.getElementById("bookname2").value = 'Superman: Red Son';
+            document.getElementById("price2").value = 1190;
+        }
+        if (id == 'c5') {
+            document.getElementById("bookname2").value = 'Civil War';
+            document.getElementById("price2").value = 549;
+        }
+        if (id == 'c6') {
+            document.getElementById("bookname2").value = 'The Leak';
+            document.getElementById("price2").value = 1350;
+        }
+    }
+
+
+
+
+
+    function data3(x) {
+        var id = document.getElementById("bookid3").value;
+
+        if (id == 'n1') {
+            document.getElementById("bookname3").value = 'The Night Always Comes';
+            document.getElementById("price3").value = 1625;
+        }
+        if (id == 'n2') {
+            document.getElementById("bookname3").value = 'Gold Diggers';
+            document.getElementById("price3").value = 1999;
+        }
+        if (id == 'n3') {
+            document.getElementById("bookname3").value = 'Call It Horses';
+            document.getElementById("price3").value = 1099;
+        }
+        if (id == 'n4') {
+            document.getElementById("bookname3").value = 'The Bone Fire';
+            document.getElementById("price3").value = 1200;
+        }
+        if (id == 'n5') {
+            document.getElementById("bookname3").value = 'The Lowering Days';
+            document.getElementById("price3").value = 1710;
+        }
+        if (id == 'n6') {
+            document.getElementById("bookname3").value = 'Acts Of Desperation';
+            document.getElementById("price3").value = 1350;
+        }
+
+
+        if (id == 's1') {
+            document.getElementById("bookname3").value = 'First Kid,Second Kid';
+            document.getElementById("price3").value = 999;
+        }
+        if (id == 's2') {
+            document.getElementById("bookname3").value = 'Al-Nar-Street';
+            document.getElementById("price3").value = 840;
+        }
+        if (id == 's3') {
+            document.getElementById("bookname3").value = 'Responsible Adults';
+            document.getElementById("price3").value = 499;
+        }
+        if (id == 's4') {
+            document.getElementById("bookname3").value = 'Taking The Blacksmith';
+            document.getElementById("price3").value = 799;
+        }
+        if (id == 's5') {
+            document.getElementById("bookname3").value = 'Bee On A String ';
+            document.getElementById("price3").value = 849;
+        }
+        if (id == 's6') {
+            document.getElementById("bookname3").value = 'Boys On A Veranda';
+            document.getElementById("price3").value = 629;
+        }
+
+
+        if (id == 'b1') {
+            document.getElementById("bookname3").value = 'The Story Of My Life';
+            document.getElementById("price3").value = 129;
+        }
+        if (id == 'b2') {
+            document.getElementById("bookname3").value = 'The Three Musketeers';
+            document.getElementById("price3").value = 250;
+        }
+        if (id == 'b3') {
+            document.getElementById("bookname3").value = 'A Memorial Discourse';
+            document.getElementById("price3").value = 1600;
+        }
+        if (id == 'b4') {
+            document.getElementById("bookname3").value = 'Cleopatra';
+            document.getElementById("price3").value = 1350;
+        }
+        if (id == 'b5') {
+            document.getElementById("bookname3").value = 'Steve Jobs';
+            document.getElementById("price3").value = 469;
+        }
+        if (id == 'b6') {
+            document.getElementById("bookname3").value = 'Leonardo da Vinci';
+            document.getElementById("price3").value = 1969;
+        }
+
+
+        if (id == 'm1') {
+            document.getElementById("bookname3").value = 'The Girl on the Train';
+            document.getElementById("price3").value = 248;
+        }
+        if (id == 'm2') {
+            document.getElementById("bookname3").value = 'And Then There Were None';
+            document.getElementById("price3").value = 599;
+        }
+        if (id == 'm3') {
+            document.getElementById("bookname3").value = 'Dark Places';
+            document.getElementById("price3").value = 350;
+        }
+        if (id == 'm4') {
+            document.getElementById("bookname3").value = 'Gone Girl';
+            document.getElementById("price3").value = 995;
+        }
+        if (id == 'm5') {
+            document.getElementById("bookname3").value = 'In the Woods';
+            document.getElementById("price3").value = 1270;
+        }
+        if (id == 'm6') {
+            document.getElementById("bookname3").value = 'The Turn of the Key';
+            document.getElementById("price3").value = 2110;
+        }
+
+
+        if (id == 'r1') {
+            document.getElementById("bookname3").value = 'Everything After';
+            document.getElementById("price3").value = 950;
+        }
+        if (id == 'r2') {
+            document.getElementById("bookname3").value = 'Act Your Age, Eve Brown';
+            document.getElementById("price3").value = 940;
+        }
+        if (id == 'r3') {
+            document.getElementById("bookname3").value = 'Wild Women and the Blues';
+            document.getElementById("price3").value = 699;
+        }
+        if (id == 'r4') {
+            document.getElementById("bookname3").value = 'Bone Criers Dawn';
+            document.getElementById("price3").value = 660;
+        }
+        if (id == 'r5') {
+            document.getElementById("bookname3").value = 'The Dating Plan';
+            document.getElementById("price3").value = 1180;
+        }
+        if (id == 'r6') {
+            document.getElementById("bookname3").value = 'Down Comes the Night';
+            document.getElementById("price3").value = 969;
+        }
+
+
+        if (id == 'c1') {
+            document.getElementById("bookname3").value = 'Batman: Year One';
+            document.getElementById("price3").value = 699;
+        }
+        if (id == 'c2') {
+            document.getElementById("bookname3").value = 'Oblivion Song, Vol. 5';
+            document.getElementById("price3").value = 1390;
+        }
+        if (id == 'c3') {
+            document.getElementById("bookname3").value = 'Hawkeye, Volume 1';
+            document.getElementById("price3").value = 789;
+        }
+        if (id == 'c4') {
+            document.getElementById("bookname3").value = 'Superman: Red Son';
+            document.getElementById("price3").value = 1190;
+        }
+        if (id == 'c5') {
+            document.getElementById("bookname3").value = 'Civil War';
+            document.getElementById("price3").value = 549;
+        }
+        if (id == 'c6') {
+            document.getElementById("bookname3").value = 'The Leak';
+            document.getElementById("price3").value = 1350;
+        }
+    }
+
+
+
+
+
+    function data4(x) {
+        var id = document.getElementById("bookid4").value;
+
+        if (id == 'n1') {
+            document.getElementById("bookname4").value = 'The Night Always Comes';
+            document.getElementById("price4").value = 1625;
+        }
+        if (id == 'n2') {
+            document.getElementById("bookname4").value = 'Gold Diggers';
+            document.getElementById("price4").value = 1999;
+        }
+        if (id == 'n3') {
+            document.getElementById("bookname4").value = 'Call It Horses';
+            document.getElementById("price4").value = 1099;
+        }
+        if (id == 'n4') {
+            document.getElementById("bookname4").value = 'The Bone Fire';
+            document.getElementById("price4").value = 1200;
+        }
+        if (id == 'n5') {
+            document.getElementById("bookname4").value = 'The Lowering Days';
+            document.getElementById("price4").value = 1710;
+        }
+        if (id == 'n6') {
+            document.getElementById("bookname4").value = 'Acts Of Desperation';
+            document.getElementById("price4").value = 1350;
+        }
+
+
+        if (id == 's1') {
+            document.getElementById("bookname4").value = 'First Kid,Second Kid';
+            document.getElementById("price4").value = 999;
+        }
+        if (id == 's2') {
+            document.getElementById("bookname4").value = 'Al-Nar-Street';
+            document.getElementById("price4").value = 840;
+        }
+        if (id == 's3') {
+            document.getElementById("bookname4").value = 'Responsible Adults';
+            document.getElementById("price4").value = 499;
+        }
+        if (id == 's4') {
+            document.getElementById("bookname4").value = 'Taking The Blacksmith';
+            document.getElementById("price4").value = 799;
+        }
+        if (id == 's5') {
+            document.getElementById("bookname4").value = 'Bee On A String ';
+            document.getElementById("price4").value = 849;
+        }
+        if (id == 's6') {
+            document.getElementById("bookname4").value = 'Boys On A Veranda';
+            document.getElementById("price4").value = 629;
+        }
+
+
+        if (id == 'b1') {
+            document.getElementById("bookname4").value = 'The Story Of My Life';
+            document.getElementById("price4").value = 129;
+        }
+        if (id == 'b2') {
+            document.getElementById("bookname4").value = 'The Three Musketeers';
+            document.getElementById("price4").value = 250;
+        }
+        if (id == 'b3') {
+            document.getElementById("bookname4").value = 'A Memorial Discourse';
+            document.getElementById("price4").value = 1600;
+        }
+        if (id == 'b4') {
+            document.getElementById("bookname4").value = 'Cleopatra';
+            document.getElementById("price4").value = 1350;
+        }
+        if (id == 'b5') {
+            document.getElementById("bookname4").value = 'Steve Jobs';
+            document.getElementById("price4").value = 469;
+        }
+        if (id == 'b6') {
+            document.getElementById("bookname4").value = 'Leonardo da Vinci';
+            document.getElementById("price4").value = 1969;
+        }
+
+
+        if (id == 'm1') {
+            document.getElementById("bookname4").value = 'The Girl on the Train';
+            document.getElementById("price4").value = 248;
+        }
+        if (id == 'm2') {
+            document.getElementById("bookname4").value = 'And Then There Were None';
+            document.getElementById("price4").value = 599;
+        }
+        if (id == 'm3') {
+            document.getElementById("bookname4").value = 'Dark Places';
+            document.getElementById("price4").value = 350;
+        }
+        if (id == 'm4') {
+            document.getElementById("bookname4").value = 'Gone Girl';
+            document.getElementById("price4").value = 995;
+        }
+        if (id == 'm5') {
+            document.getElementById("bookname4").value = 'In the Woods';
+            document.getElementById("price4").value = 1270;
+        }
+        if (id == 'm6') {
+            document.getElementById("bookname4").value = 'The Turn of the Key';
+            document.getElementById("price4").value = 2110;
+        }
+
+
+        if (id == 'r1') {
+            document.getElementById("bookname4").value = 'Everything After';
+            document.getElementById("price4").value = 950;
+        }
+        if (id == 'r2') {
+            document.getElementById("bookname4").value = 'Act Your Age, Eve Brown';
+            document.getElementById("price4").value = 940;
+        }
+        if (id == 'r3') {
+            document.getElementById("bookname4").value = 'Wild Women and the Blues';
+            document.getElementById("price4").value = 699;
+        }
+        if (id == 'r4') {
+            document.getElementById("bookname4").value = 'Bone Criers Dawn';
+            document.getElementById("price4").value = 660;
+        }
+        if (id == 'r5') {
+            document.getElementById("bookname4").value = 'The Dating Plan';
+            document.getElementById("price4").value = 1180;
+        }
+        if (id == 'r6') {
+            document.getElementById("bookname4").value = 'Down Comes the Night';
+            document.getElementById("price4").value = 969;
+        }
+
+
+        if (id == 'c1') {
+            document.getElementById("bookname4").value = 'Batman: Year One';
+            document.getElementById("price4").value = 699;
+        }
+        if (id == 'c2') {
+            document.getElementById("bookname4").value = 'Oblivion Song, Vol. 5';
+            document.getElementById("price4").value = 1390;
+        }
+        if (id == 'c3') {
+            document.getElementById("bookname4").value = 'Hawkeye, Volume 1';
+            document.getElementById("price4").value = 789;
+        }
+        if (id == 'c4') {
+            document.getElementById("bookname4").value = 'Superman: Red Son';
+            document.getElementById("price4").value = 1190;
+        }
+        if (id == 'c5') {
+            document.getElementById("bookname4").value = 'Civil War';
+            document.getElementById("price4").value = 549;
+        }
+        if (id == 'c6') {
+            document.getElementById("bookname4").value = 'The Leak';
+            document.getElementById("price4").value = 1350;
+        }
+    }
+
+
+
+
+
+    function data5(x) {
+        var id = document.getElementById("bookid5").value;
+
+        if (id == 'n1') {
+            document.getElementById("bookname5").value = 'The Night Always Comes';
+            document.getElementById("price5").value = 1625;
+        }
+        if (id == 'n2') {
+            document.getElementById("bookname5").value = 'Gold Diggers';
+            document.getElementById("price5").value = 1999;
+        }
+        if (id == 'n3') {
+            document.getElementById("bookname5").value = 'Call It Horses';
+            document.getElementById("price5").value = 1099;
+        }
+        if (id == 'n4') {
+            document.getElementById("bookname5").value = 'The Bone Fire';
+            document.getElementById("price5").value = 1200;
+        }
+        if (id == 'n5') {
+            document.getElementById("bookname5").value = 'The Lowering Days';
+            document.getElementById("price5").value = 1710;
+        }
+        if (id == 'n6') {
+            document.getElementById("bookname5").value = 'Acts Of Desperation';
+            document.getElementById("price5").value = 1350;
+        }
+
+
+        if (id == 's1') {
+            document.getElementById("bookname5").value = 'First Kid,Second Kid';
+            document.getElementById("price5").value = 999;
+        }
+        if (id == 's2') {
+            document.getElementById("bookname5").value = 'Al-Nar-Street';
+            document.getElementById("price5").value = 840;
+        }
+        if (id == 's3') {
+            document.getElementById("bookname5").value = 'Responsible Adults';
+            document.getElementById("price5").value = 499;
+        }
+        if (id == 's4') {
+            document.getElementById("bookname5").value = 'Taking The Blacksmith';
+            document.getElementById("price5").value = 799;
+        }
+        if (id == 's5') {
+            document.getElementById("bookname5").value = 'Bee On A String ';
+            document.getElementById("price5").value = 849;
+        }
+        if (id == 's6') {
+            document.getElementById("bookname5").value = 'Boys On A Veranda';
+            document.getElementById("price5").value = 629;
+        }
+
+
+        if (id == 'b1') {
+            document.getElementById("bookname5").value = 'The Story Of My Life';
+            document.getElementById("price5").value = 129;
+        }
+        if (id == 'b2') {
+            document.getElementById("bookname5").value = 'The Three Musketeers';
+            document.getElementById("price5").value = 250;
+        }
+        if (id == 'b3') {
+            document.getElementById("bookname5").value = 'A Memorial Discourse';
+            document.getElementById("price5").value = 1600;
+        }
+        if (id == 'b4') {
+            document.getElementById("bookname5").value = 'Cleopatra';
+            document.getElementById("price5").value = 1350;
+        }
+        if (id == 'b5') {
+            document.getElementById("bookname5").value = 'Steve Jobs';
+            document.getElementById("price5").value = 469;
+        }
+        if (id == 'b6') {
+            document.getElementById("bookname5").value = 'Leonardo da Vinci';
+            document.getElementById("price5").value = 1969;
+        }
+
+
+        if (id == 'm1') {
+            document.getElementById("bookname5").value = 'The Girl on the Train';
+            document.getElementById("price5").value = 248;
+        }
+        if (id == 'm2') {
+            document.getElementById("bookname5").value = 'And Then There Were None';
+            document.getElementById("price5").value = 599;
+        }
+        if (id == 'm3') {
+            document.getElementById("bookname5").value = 'Dark Places';
+            document.getElementById("price5").value = 350;
+        }
+        if (id == 'm4') {
+            document.getElementById("bookname5").value = 'Gone Girl';
+            document.getElementById("price5").value = 995;
+        }
+        if (id == 'm5') {
+            document.getElementById("bookname5").value = 'In the Woods';
+            document.getElementById("price5").value = 1270;
+        }
+        if (id == 'm6') {
+            document.getElementById("bookname5").value = 'The Turn of the Key';
+            document.getElementById("price5").value = 2110;
+        }
+
+
+        if (id == 'r1') {
+            document.getElementById("bookname5").value = 'Everything After';
+            document.getElementById("price5").value = 950;
+        }
+        if (id == 'r2') {
+            document.getElementById("bookname5").value = 'Act Your Age, Eve Brown';
+            document.getElementById("price5").value = 940;
+        }
+        if (id == 'r3') {
+            document.getElementById("bookname5").value = 'Wild Women and the Blues';
+            document.getElementById("price5").value = 699;
+        }
+        if (id == 'r4') {
+            document.getElementById("bookname5").value = 'Bone Criers Dawn';
+            document.getElementById("price5").value = 660;
+        }
+        if (id == 'r5') {
+            document.getElementById("bookname5").value = 'The Dating Plan';
+            document.getElementById("price5").value = 1180;
+        }
+        if (id == 'r6') {
+            document.getElementById("bookname5").value = 'Down Comes the Night';
+            document.getElementById("price5").value = 969;
+        }
+
+
+        if (id == 'c1') {
+            document.getElementById("bookname5").value = 'Batman: Year One';
+            document.getElementById("price5").value = 699;
+        }
+        if (id == 'c2') {
+            document.getElementById("bookname5").value = 'Oblivion Song, Vol. 5';
+            document.getElementById("price5").value = 1390;
+        }
+        if (id == 'c3') {
+            document.getElementById("bookname5").value = 'Hawkeye, Volume 1';
+            document.getElementById("price5").value = 789;
+        }
+        if (id == 'c4') {
+            document.getElementById("bookname5").value = 'Superman: Red Son';
+            document.getElementById("price5").value = 1190;
+        }
+        if (id == 'c5') {
+            document.getElementById("bookname5").value = 'Civil War';
+            document.getElementById("price5").value = 549;
+        }
+        if (id == 'c6') {
+            document.getElementById("bookname5").value = 'The Leak';
+            document.getElementById("price5").value = 1350;
+        }
+    }
+
+    function total() {
+        var a = document.getElementById("price1").value;
+        var b = document.getElementById("price2").value;
+        var c = document.getElementById("price3").value;
+        var d = document.getElementById("price4").value;
+        var e = document.getElementById("price5").value;
+        var l = parseInt(a);
+        var m = parseInt(b);
+        var n = parseInt(c);
+        var o = parseInt(d);
+        var p = parseInt(e);
+
+
+        if (a = 0) {
+            document.getElementById("netpay").value = NaN;
+        } else if (b == 0) {
+            document.getElementById("netpay").value = l;
+        } else if (c == 0) {
+            document.getElementById("netpay").value = l + m;
+        } else if (d == 0) {
+            document.getElementById("netpay").value = l + m + n;
+        } else if (e == 0) {
+            document.getElementById("netpay").value = l + m + n + o;
+
+        } else {
+            document.getElementById("netpay").value = l + m + n + o + p;
+        }
+    }
+
+    function coupon(val) {
+        var x = document.getElementById("couponcode").value;
+        var y = document.getElementById("netpay").value;
+        var z = document.getElementById("discountminus").value;
+
+        if (val == 1) {
+            if (x == 'coupon10') {
+                var p = 0.1 * y;
+                document.getElementById("discountminus").value = p.toFixed(2);
+            } else if (x == 'coupon15') {
+                var p = 0.15 * y;
+                document.getElementById("discountminus").value = p.toFixed(2);
+            } else if (x == 'coupon20') {
+                var p = 0.2 * y;
+                document.getElementById("discountminus").value = p.toFixed(2);
+            } else {
+                document.getElementById("discountminus").value = y * 0;
+            }
+        }
+
+    }
+
+
+    function lmao() {
+        var y = document.getElementById("netpay").value;
+        var z = document.getElementById("discountminus").value;
+        if (z != 0) {
+            var p = y - z;
+            document.getElementById("netpay").value = p.toFixed(2);
+        }
+
+    }
+</script>
+
+</html>

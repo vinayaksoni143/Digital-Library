@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <ul>
+        <li><a class="cat">Categories</a></li>
+        <li><a href="novel.html" target="iframe1">Novel</a></li>
+        <li><a href="shortstory.html" target="iframe1">Short Story</a></li>
+        <li><a href="biography.html" target="iframe1">Biography</a></li>
+        <li><a href="mystrey.html" target="iframe1">Mystrer & Thriller</a></li>
+        <li><a href="romance.html" target="iframe1">Romance</a></li>
+        <li><a href="comic.html" target="iframe1">Comics</a></li>
+    </ul>
+    <br><br>
+    <ul>
+        <li class="sub">Subscribe to our newsletter!</li>
+        <li>
+            <div class="first" for="second">Add your email :</div>
+            <input type="email" id="second" placeholder="E-mail"></li>
+        <li>
+            <div><button type="submit" class="button">Subscribe</button></div>
+        </li>
+    </ul>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 20px;
+            margin-left: 10px;
+            margin-top: 20px;
+            width: 200px;
+            height: 400px;
+            background-color: #333;
+            font-family: sans-serif;
+        }
+        
+        li a {
+            display: block;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            margin-top: 10px;
+            font-size: 17px;
+        }
+        
+        .cat {
+            color: aqua;
+            margin-top: 20px;
+            font-size: 22px;
+        }
+        
+        li a:hover {
+            background-color: #555;
+            color: white;
+        }
+        
+        .sub {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            font-size: 25px;
+            margin-top: 20px;
+            font-family: 'Apple Chancery';
+        }
+        
+        .first {
+            margin-top: 40px;
+            color: white;
+            text-align: center;
+            font-family: 'gill sans';
+            font-size: 20px;
+        }
+        
+        #second {
+            margin-top: 20px;
+            margin-left: 0px;
+            text-align: center;
+        }
+        
+        .button {
+            margin-top: 50px;
+            margin-left: 45px;
+            background-color: white;
+            color: #333;
+            padding: 10px;
+            height: 40px;
+            width: 100px;
+            font-size: 20px;
+            font-family: 'gill sans';
+            border: none;
+            border-radius: 5px;
+        }
+        
+        .button:hover {
+            color: white;
+            background-color: rgb(160, 17, 17);
+        }
+        
+        input[type=email],
+        select,
+        textarea {
+            font-size: 15px;
+            width: 200px;
+            height: 30px;
+            border-radius: 5px;
+            border: none;
+        }
+    </style>
+    <iframe name="iframe1" style="position:absolute;left: 300px;top: 20px;height: 1000px;width: 1000px; border:none;" src="novel.html"></iframe>
+
+</head>
+
+</html>
